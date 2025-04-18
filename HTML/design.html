@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visionary Innovation Hub</title>
+    <link rel="stylesheet" href="../CSS/design.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src = "../Assets/logo.png" width="334" height="100" alt="logo">
+        <h1>Visionary Innovation Hub</h1>
+    </div>
+    <nav>
+        <ul>
+            <li> <a href="/index.html"> Home </a> </li>
+            <li> <a href="/HTML/about.html"> About </a> </li>
+            <li> <a href="/HTML/apply.html"> Apply </a> </li>
+            <li> <a href="/HTML/visit.html"> Visit </a> </li>
+            <li> <a href="/HTML/info.html"> Information </a> </li>
+            <li> <a href="/HTML/contact.html"> Contact </a> </li>
+        </ul>
+    </nav>
+    <div class="design">
+        <h2>Design Page</h2>
+        <h3>Name: MAULANA Danisch Aswanda</h3>
+        <h3>SID: 58593079</h3>
+    </div>
+
+    <div class="table">
+        <table>
+            <caption>Designs Used</caption>
+            <tr>
+                <th>Technique</th>
+                <th>Descripton</th>
+            </tr>
+            <tr>
+                <td>Positioning</td>
+                <td>
+                    <p>Sticky: Used in nav to appear even when user is scrolling for easier access (home.css line 34)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>CSS Technique</td>
+                <td>
+                    <p>Round Corner: Used in the apply form and the buttons (apply.css line 64)</p>
+                    <p>Transition: Used in the apply form when hovering the h3 for a smoother transisition between colors (apply.css line 88)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Grouping Styles</td>
+                <td>
+                    <p>Each HTML file has it's own external CSS style (e.g. home.css, about.css). The stylesheet is linked in the head of the HTML File (e.g. ../CSS/home.css at line 7 in index.html)</p>
+                </td>
+            </tr>
+        </table>
+
+        <h2>JavaScript Features Used in app.js</h2>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Line Numbers</th>
+                    <th>Explanation</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>let</strong></td>
+                    <td>30, 94, 96</td>
+                    <td>Used for variables whose values can change (e.g., i in for loops).</td>
+                    <td><code>for (let i = 0; i < ranks.length; i++)</code>
+                </tr>
+                <tr>
+                    <td><strong>const</strong></td>
+                    <td>2-7, 11-12, 14, 21-23, 27, 31-34, 62-65, 91-92, 111</td>
+                    <td>Used for referencing DOM elements, mapping names to classes, converting string to int, defining arrays, getting ordinals for the ranks</td>
+                    <td><code>const resultBody = document.getElementById("result-body");</code><br>
+                        <code>const zoneMapping = { tech: "Technology Zone", innovation: "Innovation Zone", ecotech: "Ecology Zone" };</code><br>
+                        <code>const rank = parseInt(rankInput, 10);</code><br>
+                        <code>const gaps = [];</code>
+                        <code>const getOrdinal = (n) => {
+                            const s = ["th", "st", "nd", "rd"];
+                            const v = n % 100;
+                            return n + (s[(v - 20) % 10] || s[v] || s[0]);
+                        };</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Set</strong></td>
+                    <td>12</td>
+                    <td>Used for storing unique values (e.g., tracking selected companies without duplicates).</td>
+                    <td><code>const companies = new Set();</code></td>
+                </tr>
+                <tr>
+                    <td><strong>class</strong></td>
+                    <td>64</td>
+                    <td>Used to access and manipulate CSS class lists of DOM elements to determinine which zone a company belongs to.</td>
+                    <td><code>const zone = form.closest("div").classList[0];</code><br></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>JavaScript Features Used in visit.js</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Line Numbers</th>
+                    <th>Explanation</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>let</strong></td>
+                    <td>19, 47</td>
+                    <td>Used for variables whose values can change (e.g., `ranks`, `gaps`).</td>
+                    <td><code>let ranks = Array(10).fill(null);</code><br><code>let gaps = [];</code></td>
+                </tr>
+                <tr>
+                    <td><strong>const</strong></td>
+                    <td>2-8, 11, 16, 19, 26-28, 35, 41</td>
+                    <td>Used for referencing DOM elements, objects, creating new elements for the display message</td>
+                    <td><code>const form = document.querySelector("form");</code><br>
+                        <code>const zoneMapping = { tech: "Technology Zone", innovation: "Innovation Zone", ecotech: "Ecology Zone" };</code><br>
+                        <code>const errorMsg = reservation.querySelectorAll(".error, .success");</code><br>
+                        <code>const msgText = document.createElement("div");</code>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><strong>class</strong></td>
+                    <td>18</td>
+                    <td>Used to add a CSS class based on the value of isError.</td>
+                    <td><code>msgText.classList.add(isError? "error" : "success");</code><br><code>const company = form.querySelector("label").textContent.trim();</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>JavaScript Features Used in info.js</h2>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Line Numbers</th>
+                    <th>Explanation</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>let</strong></td>
+                    <td>21, 22</td>
+                    <td>Used to declare the message and video index.</td>
+                    <td><code>let messageIndex = 0;<br>
+                        let videoIndex = 0;</code>
+                </tr>
+                <tr>
+                    <td><strong>const</strong></td>
+                    <td>1,7,18,19,39</td>
+                    <td>Used for declaring the messages and videos that are going to be displayed, referencing DOM elements</td>
+                    <td><code>const messages = [
+                        "Join our company in Technology Zone of Visionary Innovation Hub for unparalleled opportunities in cutting-edge tech development! 15 QUOTAS LEFT!",
+                        "Become part of the Innovation Zone at Visionary Innovation Hub, where creativity meets research for groundbreaking solutions! 10 QUOTAS LEFT!",
+                        "Discover the Eco Zone at Visionary Innovation Hub, dedicated to sustainable practices and technologies for a greener future! 12 QUOTAS LEFT!"
+                    ];</code><br>
+                    <code>
+                        const videoSources = [
+                            [
+                                "https://personal.cs.cityu.edu.hk/~cs2204/2024/video/video1.mp4",
+                                "https://personal.cs.cityu.edu.hk/~cs2204/2024/video/video1.webm"
+                            ],
+                            [
+                                "https://personal.cs.cityu.edu.hk/~cs2204/2024/video/video2.mp4",
+                                "https://personal.cs.cityu.edu.hk/~cs2204/2024/video/video2.webm"
+                            ]
+                        ];
+                    </code><br>
+                    <code>
+                        const promoContainer = document.querySelector(".promotioninfo h3");
+                        const videoElement = document.querySelector(".promotioninfo video");
+                    </code>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <img src = "../Assets/footer_logo.png" width="260" height="40" alt="footer_logo">
+        <p>&copy; CityU 2024 sources of images and text from Wikipedia Commons and Courtesy of Icon pack by Icons8 -- designed by <a href="/HTML/design.html">Danisch</a>
+        </p>
+    </footer>
+</body>
+
